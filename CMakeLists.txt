@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 2.6)
-include(Solar.cmake)
+set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_MODULE_PATH})
+include(Solar)
 
 message(STATUS "Target architectures: ${CMAKE_TARGET_ARCHITECTURES}")
 

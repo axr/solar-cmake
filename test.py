@@ -58,15 +58,15 @@ def runTest(archs, generator):
         return output
     except subprocess.CalledProcessError, e:
         if e.returncode < 0:
-            print("cmake was terminated by signal " + -e.returncode, file=sys.stderr)
+            print("cmake was terminated by signal", -e.returncode, file=sys.stderr)
         elif e.returncode > 0:
-            print("cmake returned " + e.returncode, file=sys.stderr)
+            print("cmake returned", e.returncode, file=sys.stderr)
 
         sys.exit(1)
     except KeyboardInterrupt:
         sys.exit(1)
     except OSError, e:
-        print("Execution failed: " + e, file=sys.stderr)
+        print("Execution failed:", e, file=sys.stderr)
         sys.exit(1)
 
 aggregatedOutput = ""
