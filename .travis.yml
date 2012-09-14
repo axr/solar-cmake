@@ -1,0 +1,14 @@
+language: cpp
+compiler:
+  - gcc
+  - clang
+script: ./test.py
+branches:
+  only:
+    - master
+notifications:
+  recipients:
+    - jake.petroules+travis@petroules.com
+  email:
+    on_success: change
+    on_failure: always
