@@ -11,10 +11,11 @@ Here is a list of the CMake modules available and the functionality they provide
 
 *WARNING: this script is not passive - code will be executed merely by including the module*
 
-CMake currently lacks a built-in way to detect the architecture (i386, x86_64, armv7, etc.) of the target platform. This module sets two variables after inclusion:
+CMake currently lacks a built-in way to detect the architecture (i386, x86_64, armv7, etc.) of the target platform. This module sets three variables after inclusion:
 
 * `CMAKE_TARGET_ARCHITECTURES` - contains either the name of the target architecture, or if building universal binaries on OS X, a list of target architectures
 * `CMAKE_TARGET_ARCHITECTURE_UNIVERSAL` - TRUE if `CMAKE_TARGET_ARCHITECTURES` contains more than one architecture; FALSE in all other cases
+* `CMAKE_TARGET_ARCHITECTURE_CODE` - the string "universal" if `CMAKE_TARGET_ARCHITECTURE_UNIVERSAL` is TRUE, otherwise equivalent to `CMAKE_TARGET_ARCHITECTURES`; this can be useful for filename generation
 
 **OS X / PowerPC note:** including this module causes CMake to throw an error if any of the architectures passed to `CMAKE_OSX_ARCHITECTURES` are invalid. Currently the list of valid architectures includes only i386 and x86_64, since Apple has not officially supported PowerPC development since the OS X 10.5 SDK. However if you're feeling adventurous, you can set the CMake variable `ppc_support` to TRUE before including this module, and ppc and ppc64 will be accepted as valid architectures.
 
