@@ -33,15 +33,3 @@ int main() { return 0; }
         set(${output_variable} FALSE PARENT_SCOPE)
     endif()
 endfunction()
-
-# Checks whether the compiler in use is Clang by asking the compiler itself
-# CMAKE_COMPILER_IS_CLANGXX will be set in the parent scope if this is the case
-function(check_clang)
-    is_symbol_defined(clang_result __clang__)
-
-    if(clang_result)
-        set(CMAKE_COMPILER_IS_CLANGXX TRUE PARENT_SCOPE)
-    else()
-        set(CMAKE_COMPILER_IS_CLANGXX FALSE PARENT_SCOPE)
-    endif()
-endfunction()
