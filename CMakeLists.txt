@@ -8,7 +8,6 @@ if(CMAKE_TARGET_ARCHITECTURE_UNIVERSAL)
     message(STATUS "Building universal binaries for OS X")
 endif()
 
-check_clang()
 message(STATUS "Compiler is Clang? ${CMAKE_COMPILER_IS_CLANGXX}")
 
 git_shorttag(rev_id)
