@@ -18,3 +18,10 @@ endif()
 is_symbol_defined(CMAKE_COMPILER_IS_CLANGXX __clang__)
 
 use_qt_sdk_locations()
+
+# The suffix of the thing that the user clicks as opposed to the actual executable
+if(APPLE)
+    set(CMAKE_USER_EXECUTABLE_SUFFIX ".app")
+else()
+    set(CMAKE_USER_EXECUTABLE_SUFFIX "${CMAKE_EXECUTABLE_SUFFIX}")
+endif()

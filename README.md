@@ -50,6 +50,8 @@ To include all modules, simply include Solar.cmake. This file also sets several 
 
 * `CMAKE_COMPILER_IS_CLANGXX` - TRUE if the current C/C++ compiler is Clang/LLVM
 
+* `CMAKE_USER_EXECUTABLE_SUFFIX` - .app on Apple platforms, otherwise equivalent to `CMAKE_EXECUTABLE_SUFFIX`
+
 * calls `use_qt_sdk_locations`
 
 Bug tracker
